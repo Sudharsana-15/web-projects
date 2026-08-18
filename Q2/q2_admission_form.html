@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Admission Form</title>
+
+    <link rel="stylesheet" href="q2_style.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- Header -->
+    <div class="top-banner">
+        <h1>🎓 Student Admission Form</h1>
+        <p>Fill in your details to apply for the upcoming academic year</p>
+    </div>
+
+
+    <!-- Form -->
+    <form class="form-card">
+
+        <!-- Full Name and Date of Birth -->
+        <div class="grid-2">
+
+            <div class="form-group">
+                <label for="fname">Full Name</label>
+                <input type="text"
+                       id="fname"
+                       placeholder="Enter your full name"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date"
+                       id="dob"
+                       required>
+            </div>
+
+        </div>
+
+
+        <!-- Email and Phone -->
+        <div class="grid-2">
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email"
+                       id="email"
+                       placeholder="example@mail.com"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel"
+                       id="phone"
+                       pattern="[0-9]{10}"
+                       placeholder="10-digit number"
+                       required>
+            </div>
+
+        </div>
+
+
+        <!-- Gender -->
+        <div class="form-group">
+
+            <label>Gender</label>
+
+            <div class="pill-group">
+
+                <input type="radio"
+                       id="male"
+                       name="gender"
+                       value="male">
+
+                <label for="male" class="pill">
+                    Male
+                </label>
+
+
+                <input type="radio"
+                       id="female"
+                       name="gender"
+                       value="female">
+
+                <label for="female" class="pill">
+                    Female
+                </label>
+
+
+                <input type="radio"
+                       id="other"
+                       name="gender"
+                       value="other">
+
+                <label for="other" class="pill">
+                    Other
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- Course and Photo -->
+        <div class="grid-2">
+
+            <div class="form-group">
+
+                <label for="course">Course</label>
+
+                <select id="course" required>
+
+                    <option value="">
+                        -- Select Course --
+                    </option>
+
+                    <option value="cse">
+                        Computer Science Engineering
+                    </option>
+
+                    <option value="ece">
+                        Electronics & Communication
+                    </option>
+
+                    <option value="mech">
+                        Mechanical Engineering
+                    </option>
+
+                    <option value="civil">
+                        Civil Engineering
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="photo">
+                    Upload Passport Photo
+                </label>
+
+                <input type="file"
+                       id="photo"
+                       accept="image/*">
+
+            </div>
+
+        </div>
+
+
+        <!-- Previous Academic Percentage -->
+        <div class="form-group">
+
+            <label for="marks">
+                Previous Academic %:
+                <b id="marksVal">75</b>%
+            </label>
+
+            <input type="range"
+                   id="marks"
+                   min="0"
+                   max="100"
+                   value="75"
+                   oninput="document.getElementById('marksVal').innerText=this.value">
+
+        </div>
+
+
+        <!-- Address -->
+        <div class="form-group">
+
+            <label for="address">Address</label>
+
+            <textarea id="address"
+                      rows="3"
+                      placeholder="Enter your address"></textarea>
+
+        </div>
+
+
+        <!-- Campus Image -->
+        <div class="media-block">
+
+            <img src="campus.jpg"
+                 alt="College Campus">
+
+            <span>
+                🏫 College Campus — Main Building
+            </span>
+
+        </div>
+
+
+        <!-- Terms and Conditions -->
+        <div class="form-group checkbox-row">
+
+            <input type="checkbox"
+                   id="terms"
+                   required>
+
+            <label for="terms">
+                I agree to the terms and conditions
+            </label>
+
+        </div>
+
+
+        <!-- Submit Button -->
+        <button type="submit">
+            Submit Application
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
