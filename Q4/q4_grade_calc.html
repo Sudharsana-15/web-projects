@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Report Card Generator</title>
+<style>
+  * { box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; }
+  body {
+    background: #2d3142; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 30px 15px;
+  }
+  .sheet {
+    background: white; width: 100%; max-width: 520px; border-radius: 4px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4); overflow: hidden;
+  }
+  .letterhead {
+    background: #ffffff; border-bottom: 4px double #2d3142; padding: 25px 30px; text-align: center;
+  }
+  .letterhead .seal { font-size: 34px; }
+  .letterhead h1 { font-size: 20px; letter-spacing: 1px; margin-top: 8px; color: #2d3142; }
+  .letterhead p { font-size: 11px; color: #888; margin-top: 4px; letter-spacing: 1px; }
+
+  .entry-table { padding: 25px 30px; }
+  .entry-row { display: grid; grid-template-columns: 140px 1fr; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .entry-row label { font-size: 13px; font-weight: 600; color: #444; }
+  .entry-row input {
+    padding: 9px 12px; border: none; border-bottom: 2px solid #ddd; font-size: 15px; background: transparent;
+  }
+  .entry-row input:focus { outline: none; border-color: #2d3142; }
+
+  .generate-btn {
+    display: block; width: calc(100% - 60px); margin: 10px 30px 25px; padding: 13px;
+    background: #2d3142; color: white; border: none; font-size: 14px; letter-spacing: 1px; cursor: pointer;
+  }
+  .generate-btn:hover { background: #4f5d75; }
+
+  #result { display: none; margin: 0 30px 30px; border-top: 2px dashed #ccc; padding-top: 20px; }
+  .marksheet-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .marksheet-table th { background: #2d3142; color: white; padding: 8px; text-align: left; font-weight: 500; }
+  .marksheet-table td { padding: 8px; border-bottom: 1px solid #eee; }
+
+  .stamp-row { display: flex; justify-content: space-between; margin-top: 20px; align-items: center; }
+  .stamp {
+    width: 90px; height: 90px; border: 3px solid; border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-weight: bold; font-size: 13px; text-align: center; transform: rotate(-12deg);
+  }
+  .stamp.pass { border-color: #2f9e44; color: #2f9e44; }
+  .stamp.fail { border-color: #e03131; color: #e03131; }
+  .grade-final { font-size: 40px; font-weight: 800; color: #2d3142; }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+  <div class="letterhead">
+    <div class="seal">🎓</div>
+    <h1>STUDENT REPORT CARD</h1>
+    <p>ACADEMIC PERFORMANCE RECORD</p>
+  </div>
+
+  <div class="entry-table">
+    <div class="entry-row"><label>Subject 1</label><input type="number" id="sub1" placeholder="Marks (0-100)"></div>
+    <div class="entry-row"><label>Subject 2</label><input type="number" id="sub2" placeholder="Marks (0-100)"></div>
+    <div class="entry-row"><label>Subject 3</label><input type="number" id="sub3" placeholder="Marks (0-100)"></div>
+    <div class="entry-row"><label>Subject 4</label><input type="number" id="sub4" placeholder="Marks (0-100)"></div>
+    <div class="entry-row"><label>Subject 5</label><input type="number" id="sub5" placeholder="Marks (0-100)"></div>
+  </div>
+
+  <button class="generate-btn" onclick="calculateGrade()">GENERATE REPORT CARD</button>
+
+  <div id="result"></div>
+</div>
+
+<script src="q4_script.js"></script>
+</body>
+</html>
