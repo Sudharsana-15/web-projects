@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Web Fundamentals — Docs</title>
+<style>
+  * { box-sizing: border-box; font-family: 'Georgia', serif; margin: 0; }
+  body { display: flex; background: #fdfcf9; color: #2b2b2b; }
+
+  /* Sidebar navigation */
+  .sidebar {
+    width: 240px; background: #23272f; color: #e8e8e8; min-height: 100vh;
+    padding: 25px 20px; position: sticky; top: 0; font-family: Arial, sans-serif;
+  }
+  .sidebar h3 { color: #fff; font-size: 15px; letter-spacing: 1px; margin-bottom: 20px; }
+  .sidebar a {
+    display: block; color: #b8bcc4; text-decoration: none; padding: 8px 10px;
+    border-radius: 6px; font-size: 13px; margin-bottom: 4px;
+  }
+  .sidebar a:hover { background: #343a46; color: #fff; }
+
+  .main { flex: 1; padding: 50px 60px; max-width: 850px; }
+  .main h1 { font-size: 34px; border-bottom: 3px solid #23272f; padding-bottom: 12px; }
+  .main h2 { font-size: 22px; margin-top: 40px; color: #23272f; }
+  .main h2::before { content: "§ "; color: #999; }
+  p { line-height: 1.8; font-size: 16px; }
+
+  .callout { background: #eef1ff; border-left: 4px solid #4c5fd5; padding: 14px 18px; margin: 14px 0; font-family: Arial, sans-serif; font-size: 14px; }
+  .url-bar { background: #1e1e2e; color: #a6e3a1; font-family: monospace; padding: 14px 18px; border-radius: 8px; font-size: 15px; margin: 15px 0; }
+  .url-bar span.p1 { color: #f38ba8; } .url-bar span.p2 { color: #89b4fa; } .url-bar span.p3 { color: #fab387; } .url-bar span.p4 { color: #a6e3a1; }
+
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-family: Arial, sans-serif; font-size: 13px; }
+  th { background: #23272f; color: white; padding: 10px; text-align: left; }
+  td { padding: 10px; border-bottom: 1px solid #ddd; }
+
+  .flow { display: flex; align-items: center; justify-content: center; gap: 15px; margin: 25px 0; font-family: Arial, sans-serif; flex-wrap: wrap; }
+  .flow-box { background: #23272f; color: white; padding: 14px 20px; border-radius: 8px; font-size: 13px; text-align: center; }
+  .flow-arrow { font-size: 20px; color: #999; }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <h3>📘 WEB FUNDAMENTALS</h3>
+  <a href="#s1">1. Internet Overview</a>
+  <a href="#s2">2. Network Concepts</a>
+  <a href="#s3">3. URL Structure</a>
+  <a href="#s4">4. Domain Name</a>
+  <a href="#s5">5. Browsers & Servers</a>
+  <a href="#s6">6. How a Website Works</a>
+  <a href="#s7">7. Client vs Server</a>
+</div>
+
+<div class="main">
+  <h1>Web Fundamentals</h1>
+  <p style="color:#777; font-family:Arial, sans-serif; font-size:14px;">A quick primer for understanding how the web works, prepared for the institution's website planning phase.</p>
+
+  <h2 id="s1">Internet Overview</h2>
+  <p>The Internet is a vast global network of interconnected computers that communicate using standardized protocols (TCP/IP) to exchange data, resources, and services across the world.</p>
+
+  <h2 id="s2">Fundamental Computer Network Concepts</h2>
+  <div class="callout">
+    <b>Node</b> — any device connected to a network &nbsp;•&nbsp;
+    <b>IP Address</b> — unique identifier for each device &nbsp;•&nbsp;
+    <b>Protocol</b> — rules for communication (HTTP, TCP/IP) &nbsp;•&nbsp;
+    <b>Bandwidth</b> — data transfer capacity
+  </div>
+
+  <h2 id="s3">URL and its Structure</h2>
+  <div class="url-bar">
+    <span class="p1">https://</span><span class="p2">www.example.com</span><span class="p3">:443</span><span class="p4">/path/page.html?query=1</span>
+  </div>
+  <table>
+    <tr><th>Part</th><th>Example</th><th>Meaning</th></tr>
+    <tr><td>Protocol</td><td>https://</td><td>Method of data transfer</td></tr>
+    <tr><td>Domain</td><td>www.example.com</td><td>Website address</td></tr>
+    <tr><td>Port</td><td>:443</td><td>Communication endpoint</td></tr>
+    <tr><td>Path</td><td>/path/page.html</td><td>Resource location</td></tr>
+    <tr><td>Query</td><td>?query=1</td><td>Extra parameters</td></tr>
+  </table>
+
+  <h2 id="s4">Domain Name</h2>
+  <p>A domain name (e.g. <i>example.com</i>) is a human-readable address mapped to a numeric IP address via DNS (Domain Name System), so users don't need to remember IP numbers.</p>
+
+  <h2 id="s5">Web Browsers and Web Servers</h2>
+  <div class="callout">
+    <b>Web Browser:</b> Client software (Chrome, Firefox) that requests and renders web pages.<br><br>
+    <b>Web Server:</b> Software/hardware (Apache, Nginx) that stores and delivers web pages on request.
+  </div>
+
+  <h2 id="s6">Working Principle of a Website</h2>
+  <div class="flow">
+    <div class="flow-box">🖥️ Browser<br>(Client)</div>
+    <div class="flow-arrow">⇄</div>
+    <div class="flow-box">🌐 Web Server</div>
+  </div>
+  <p style="font-family:Arial, sans-serif; font-size:14px;">1. User enters URL → 2. Browser sends HTTP request → 3. Server processes request → 4. Server sends back HTML/CSS/JS → 5. Browser renders the page.</p>
+
+  <h2 id="s7">Client-side vs Server-side Scripting</h2>
+  <table>
+    <tr><th>Client-side</th><th>Server-side</th></tr>
+    <tr><td>Runs in the browser</td><td>Runs on the web server</td></tr>
+    <tr><td>HTML, CSS, JavaScript</td><td>PHP, Python, Node.js</td></tr>
+    <tr><td>Faster, reduces server load</td><td>Handles database, authentication</td></tr>
+  </table>
+</div>
+
+</body>
+</html>
